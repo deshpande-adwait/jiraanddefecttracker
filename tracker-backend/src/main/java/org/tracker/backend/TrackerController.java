@@ -11,6 +11,7 @@ public class TrackerController {
 
 	@GetMapping
 	public String home(Model model) {
-		return "index.html";
+		System.out.println("***** Serving '/home' *****");
+		return "forward:/index.html";
 	}
 }
