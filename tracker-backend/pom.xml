@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.jiraanddefect</groupId>
+    <artifactId>tracker</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>tracker-backend</artifactId>
+  <packaging>war</packaging>
+  <name>tracker-backend</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+  	<start-class>org.tracker.backend.TrackerApplication</start-class>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>13</java.version>
+  </properties>
+  <dependencies>  
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-jersey</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>org.hsqldb</groupId>
+		<artifactId>hsqldb</artifactId>
+		<scope>runtime</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+		<exclusions>
+			<exclusion>
+				<groupId>org.junit.vintage</groupId>
+				<artifactId>junit-vintage-engine</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.jiraanddefect</groupId>
+        <artifactId>tracker-UI</artifactId>
+        <version>${project.version}</version>
+        <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+  <build>
+	<plugins>			
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-failsafe-plugin</artifactId>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+           </plugin>
+           <plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-war-plugin</artifactId>
+               <configuration>
+                   <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
+                   <warName>tutorial-app</warName>
+               </configuration>
+           </plugin>
+           <plugin>
+			   <artifactId>maven-resources-plugin</artifactId>
+			   <executions>
+			       <execution>
+			           <id>copy-resources</id>
+			           <phase>validate</phase>
+			           <goals>
+			              <goal>copy-resources</goal>
+			           </goals>
+			           <configuration>
+			               <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
+			               <resources>
+			                   <resource>
+			                       <directory>${project.parent.basedir}/tracker-UI/src/main/web/dist/np-app/</directory>
+			                   </resource>
+			               </resources>
+			           </configuration>
+			       </execution>
+			   </executions>
+		   </plugin>
+	</plugins>
+  </build>
+  
+  
+  
+  
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+ 
+ 
+ 
+ 
+ 
+</project>
