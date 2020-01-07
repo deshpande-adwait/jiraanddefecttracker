@@ -103,7 +103,7 @@
 			               <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
 			               <resources>
 			                   <resource>
-			                       <directory>${project.parent.basedir}/tracker-UI/src/main/web/dist/np-app/</directory>
+			                       <directory>${project.parent}/tracker-UI/src/main/web/tracker-UI-app/</directory>
 			                   </resource>
 			               </resources>
 			           </configuration>
