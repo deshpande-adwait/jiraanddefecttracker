@@ -9,7 +9,6 @@
   </parent>
   <artifactId>tracker-UI</artifactId>
   <name>tracker-UI</name>
-  <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -22,7 +21,7 @@
 	    <configuration>
 	        <nodeVersion>v12.14.0</nodeVersion>
 	        <npmVersion>6.13.4</npmVersion>
-	        <workingDirectory>src/main/web/</workingDirectory>
+	        <workingDirectory>src/main/web/tracker-UI-app</workingDirectory>
 	    </configuration>
 	    <executions>
 	        <execution>

@@ -10,11 +10,10 @@
   <artifactId>tracker-backend</artifactId>
   <packaging>war</packaging>
   <name>tracker-backend</name>
-  <url>http://maven.apache.org</url>
   <properties>
   	<start-class>org.tracker.backend.TrackerApplication</start-class>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>13</java.version>
+    <java.version>8</java.version>
   </properties>
   <dependencies>  
 	<dependency>
@@ -29,7 +28,6 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
-
 	<dependency>
 		<groupId>org.hsqldb</groupId>
 		<artifactId>hsqldb</artifactId>
@@ -67,6 +65,19 @@
         <version>${project.version}</version>
         <scope>runtime</scope>
     </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-integration</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
 	<plugins>			
@@ -87,7 +98,7 @@
                <artifactId>maven-war-plugin</artifactId>
                <configuration>
                    <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
-                   <warName>tutorial-app</warName>
+                   <warName>tracker-app</warName>
                </configuration>
            </plugin>
            <plugin>
