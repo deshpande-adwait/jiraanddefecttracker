@@ -59,12 +59,12 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!--dependency>
         <groupId>com.jiraanddefect</groupId>
         <artifactId>tracker-UI</artifactId>
         <version>${project.version}</version>
         <scope>runtime</scope>
-    </dependency>
+    </dependency-->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-aop</artifactId>
@@ -78,6 +78,22 @@
         <artifactId>spring-boot-starter-tomcat</artifactId>
         <scope>provided</scope>
     </dependency>
+	  <dependency>
+		  <groupId>org.testng</groupId>
+		  <artifactId>testng</artifactId>
+		  <version>RELEASE</version>
+		  <scope>compile</scope>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.testng</groupId>
+		  <artifactId>testng</artifactId>
+		  <version>7.1.0</version>
+		  <scope>compile</scope>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-test</artifactId>
+	  </dependency>
   </dependencies>
   <build>
 	<plugins>			
